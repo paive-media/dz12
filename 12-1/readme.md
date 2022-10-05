@@ -36,24 +36,24 @@
 
 **Должности (positions)**
  - `id` 					smallint NOT NULL *PK autoincrement*
- - `title` 				varchar(255)
+ - `title` 				varchar(100)
 
 
 **Подразделения (divisions)**
  - `id` 					smallint NOT NULL *PK autoincrement*
- - `title` 				varchar(255)
+ - `title` 				varchar(100)
  - `div_type` 			enum('Группа','Отдел','Департамент')
 
 
 **Проекты (projects)**
  - `id`					int NOT NULL *PK autoincrement*
  - `customer_id` 			int NOT NULL *FK customers.id*
- - `title` 				varchar(255)
+ - `title` 				varchar(100)
 
 
 **Клиенты (customers)**
  - `id` 					int NOT NULL *PK autoincrement*
- - `legal_title` 			varchar(255)
+ - `legal_title` 			varchar(100)
 
 
 **Филиалы (offices)**
