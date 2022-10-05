@@ -30,51 +30,51 @@
 Разбил ПРОЕКТЫ по Компаниям-клиентам.
 
 **Сотрудники (employees)**
- - `id` 					int NOT NULL PK autoincrement
+ - `id` 					int NOT NULL *PK autoincrement*
  - `full_name` 			varchar(255)
 
 
 **Должности (positions)**
- - `id` 					smallint NOT NULL PK autoincrement
+ - `id` 					smallint NOT NULL *PK autoincrement*
  - `title` 				varchar(255)
 
 
 **Подразделения (divisions)**
- - `id` 					smallint NOT NULL PK autoincrement
+ - `id` 					smallint NOT NULL *PK autoincrement*
  - `title` 				varchar(255)
  - `div_type` 			enum('Группа','Отдел','Департамент')
 
 
 **Проекты (projects)**
- - `id`					int NOT NULL PK autoincrement
- - `customer_id` 			int NOT NULL FK customers.id
+ - `id`					int NOT NULL *PK autoincrement*
+ - `customer_id` 			int NOT NULL *FK customers.id*
  - `title` 				varchar(255)
 
 
 **Клиенты (customers)**
- - `id` 					int NOT NULL PK autoincrement
+ - `id` 					int NOT NULL *PK autoincrement*
  - `legal_title` 			varchar(255)
 
 
 **Филиалы (offices)**
- - `id` 					smallint NOT NULL PK autoincrement
+ - `id` 					smallint NOT NULL *PK autoincrement*
  - `region` 				varchar(255)
  - `city` 				varchar(255)
  - `address` 				varchar(255)
 
 
 **Распределение по проектам (teams)**
- - `id` 					int NOT NULLPK autoincrement
- - `project_id` 			int NOT NULL FK projects.id
- - `emp_id`				int NOT NULL FK employees.id
+ - `id` 					int NOT NULL *PK autoincrement*
+ - `project_id` 			int NOT NULL *FK projects.id*
+ - `emp_id`				int NOT NULL *FK employees.id*
 
 
 **Информация о найме (hr_links)**
- - `id` 					int NOT NULL PK autoincrement
- - `emp_id`				int NOT NULL FK employees.id
+ - `id` 					int NOT NULL *PK autoincrement*
+ - `emp_id`				int NOT NULL *FK employees.id*
  - `hire_date` 			date
  - `salary_value` 		decimal
- - `office_id` 			smallint NOT NULL FK offices.id
- - `div_id` 				smallint NOT NULL FK divisions.id
- - `pos_id` 				smallint NOT NULL FK positions.id
+ - `office_id` 			smallint NOT NULL *FK offices.id*
+ - `div_id` 				smallint NOT NULL *FK divisions.id*
+ - `pos_id` 				smallint NOT NULL *FK positions.id*
  
