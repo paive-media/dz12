@@ -54,6 +54,9 @@ SHOW TABLE STATUS;
 
 ```
 
+![task1 screen1](https://github.com/paive-media/dz12/blob/main/12-2/dz_db_12-2_screen1.png "DDL")
+![task1 screen2](https://github.com/paive-media/dz12/blob/main/12-2/sakila_erd.png "ERd")
+
 
 ---
 
@@ -81,6 +84,9 @@ WHERE
 
 ```
 
+![task2 screen](https://github.com/paive-media/dz12/blob/main/12-2/dz_db_12-2_screen3.png "Tables+PKs")
+
+
 ### Задание 3.*
 3.1 Уберите у пользователя sys_temp права на внесение, изменение и удаление данных из базы sakila.
 3.2 Выполните запрос на получение списка прав для пользователя sys_temp. (скриншот)
@@ -94,4 +100,6 @@ REVOKE ALL PRIVILEGES ON *.* FROM 'sys_temp'@'localhost';
 
 SHOW GRANTS FOR 'sys_temp'@'localhost';
 ```
+
+![task3 screen](https://github.com/paive-media/dz12/blob/main/12-2/dz_db_12-2_screen4.png "revoked")
 
