@@ -95,10 +95,17 @@ WHERE
 ### Решение
 
 ```sql
-REVOKE INSERT,UPDATE,DELETE,DROP ON sakila.* FROM 'sys_temp'@'localhost';
-REVOKE ALL PRIVILEGES ON *.* FROM 'sys_temp'@'localhost';
+-- Установка и отбор прав доступа
+GRANT ALL PRIVILEGES ON *.* TO 'sys_temp'@'localhost';
+GRANT ALL PRIVILEGES ON sakila.* TO 'sys_temp'@'localhost';
 
 SHOW GRANTS FOR 'sys_temp'@'localhost';
+
+-- Отбор прав доступа для таблицы
+REVOKE INSERT,UPDATE,DELETE,DROP ON sakila.* FROM 'sys_temp'@'localhost';
+
+-- Отбор прав доступа ото всех таблиц (уже после скрина)
+REVOKE ALL PRIVILEGES ON *.* FROM 'sys_temp'@'localhost';
 ```
 
 ![task3 screen](https://github.com/paive-media/dz12/blob/main/12-2/dz_db_12-2_screen4.png "revoked")
