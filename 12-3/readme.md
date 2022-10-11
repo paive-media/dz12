@@ -15,12 +15,12 @@
 Получите уникальные названия районов из таблицы с адресами, которые начинаются на “K” и заканчиваются на “a”, и не содержат пробелов.
 
 ```sql
-SELECT DISTINCT a.district
-FROM address AS a 
+SELECT DISTINCT district
+FROM address  
 WHERE 
-  LEFT(a.district,1)='K' AND 
-  RIGHT(a.district,1)='a' AND 
-  POSITION(' ' IN a.district)=0
+  LEFT(district,1)='K' AND 
+  RIGHT(district,1)='a' AND 
+  POSITION(' ' IN district)=0
 
 ```
 
@@ -31,7 +31,7 @@ WHERE
 
 ```sql
 SELECT * 
-FROM payment p 
+FROM payment 
 WHERE 
   amount >10 AND 
   DATE(payment_date) BETWEEN '2005-06-15' AND '2005-06-18'
@@ -43,7 +43,7 @@ WHERE
 
 ```sql
 SELECT * 
-FROM payment p 
+FROM payment 
 WHERE 1
 ORDER BY payment_date DESC 
 LIMIT 5
@@ -66,7 +66,7 @@ SELECT
   LOWER(last_name) as last_name, 
   email, 
   active  
-FROM customer c 
+FROM customer 
 WHERE 
   (first_name = 'Kelly' OR first_name = 'Willie') AND 
   active = 1
