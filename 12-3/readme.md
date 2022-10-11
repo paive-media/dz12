@@ -17,7 +17,10 @@
 ```sql
 SELECT DISTINCT a.district
 FROM address AS a 
-WHERE LEFT(a.district,1)='K' AND RIGHT(a.district,1)='a' AND POSITION(' ' IN a.district)=0
+WHERE 
+  LEFT(a.district,1)='K' AND 
+  RIGHT(a.district,1)='a' AND 
+  POSITION(' ' IN a.district)=0
 
 ```
 
@@ -27,8 +30,11 @@ WHERE LEFT(a.district,1)='K' AND RIGHT(a.district,1)='a' AND POSITION(' ' IN a.d
 и стоимость которых превышает 10.00.
 
 ```sql
-SELECT * FROM payment p 
-WHERE amount >10 AND DATE(payment_date) BETWEEN '2005-06-15' AND '2005-06-18'
+SELECT * 
+FROM payment p 
+WHERE 
+  amount >10 AND 
+  DATE(payment_date) BETWEEN '2005-06-15' AND '2005-06-18'
 ```
 
 ### Задание 3.
@@ -36,7 +42,11 @@ WHERE amount >10 AND DATE(payment_date) BETWEEN '2005-06-15' AND '2005-06-18'
 Получите последние 5 аренд фильмов.
 
 ```sql
-SELECT * FROM payment p ORDER BY payment_date DESC LIMIT 5
+SELECT * 
+FROM payment p 
+WHERE 1
+ORDER BY payment_date DESC 
+LIMIT 5
 ```
 
 ### Задание 4.
@@ -58,8 +68,8 @@ SELECT
   active  
 FROM customer c 
 WHERE 
-  (first_name = 'Kelly' OR first_name = 'Willie') 
-  AND active = 1
+  (first_name = 'Kelly' OR first_name = 'Willie') AND 
+  active = 1
 ```
 
 ### Задание 5*.
