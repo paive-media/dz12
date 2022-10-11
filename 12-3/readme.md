@@ -15,7 +15,10 @@
 Получите уникальные названия районов из таблицы с адресами, которые начинаются на “K” и заканчиваются на “a”, и не содержат пробелов.
 
 ```sql
-SELECT …
+SELECT DISTINCT a.district
+FROM address AS a 
+WHERE LEFT(a.district,1)='K' AND RIGHT(a.district,1)='a' AND POSITION(' ' IN a.district)=0
+
 ```
 
 ### Задание 2.
