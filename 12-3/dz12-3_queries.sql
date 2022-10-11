@@ -73,3 +73,5 @@ SELECT
 FROM customer
 WHERE 
 	POSITION('@' IN email)!=0;
+
+
