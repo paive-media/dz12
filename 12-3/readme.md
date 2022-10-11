@@ -36,7 +36,7 @@ WHERE amount >10 AND DATE(payment_date) BETWEEN '2005-06-15' AND '2005-06-18'
 Получите последние 5 аренд фильмов.
 
 ```sql
-SELECT …
+SELECT * FROM payment p ORDER BY payment_date DESC LIMIT 5
 ```
 
 ### Задание 4.
