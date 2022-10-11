@@ -79,8 +79,8 @@ WHERE
 ```sql
 SELECT 
 	email, 
-	LEFT(email, POSITION('@' IN email)-1) AS mail_user, 
-	RIGHT (email, POSITION('@' IN email)+1) AS mail_domain 
+	LEFT(email, POSITION('@' IN email)-1) AS mail_user,
+	SUBSTR(email, POSITION('@' IN email)+1) AS mail_domain
 FROM customer
 WHERE 
 	POSITION('@' IN email)!=0
@@ -91,6 +91,15 @@ WHERE
 Доработайте запрос из предыдущего задания, скорректируйте значения в новых колонках: первая буква должна быть заглавной, остальные строчными.
 
 ```sql
-SELECT …
+
+SELECT 
+	email, 
+	LEFT(email, POSITION('@' IN email)-1) AS mail_user,
+	CONCAT( UPPER(LEFT(email,1)), LOWER(SUBSTR(email, 2, POSITION('@' IN email)-2)) ) AS mail_user_formatted,
+	SUBSTR(email, POSITION('@' IN email)+1) AS mail_domain,
+	CONCAT( UPPER(SUBSTR(email,POSITION('@' IN email)+1,1)), LOWER( SUBSTR(email, POSITION('@' IN email)+2) )) AS mail_domain_formatted
+FROM customer
+WHERE 
+	POSITION('@' IN email)!=0
 ```
 
