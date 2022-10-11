@@ -77,7 +77,13 @@ WHERE
 Выведите Email каждого покупателя, разделив значение Email на 2 отдельных колонки: в первой колонке должно быть значение, указанное до @, во второй значение, указанное после @.
 
 ```sql
-SELECT …
+SELECT 
+	email, 
+	LEFT(email, POSITION('@' IN email)-1) AS mail_user, 
+	RIGHT (email, POSITION('@' IN email)+1) AS mail_domain 
+FROM customer
+WHERE 
+	POSITION('@' IN email)!=0
 ```
 
 ### Задание 6.*
