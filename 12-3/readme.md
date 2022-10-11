@@ -48,7 +48,18 @@ SELECT * FROM payment p ORDER BY payment_date DESC LIMIT 5
 - замените буквы 'll' в именах на 'pp'
 
 ```sql
-SELECT …
+SELECT 
+  customer_id, 
+  store_id, 
+  first_name, 
+  REPLACE(LOWER(first_name),'ll','pp') as new_first_name, 
+  LOWER(last_name) as last_name, 
+  email, 
+  active  
+FROM customer c 
+WHERE 
+  (first_name = 'Kelly' OR first_name = 'Willie') 
+  AND active = 1
 ```
 
 ### Задание 5*.
