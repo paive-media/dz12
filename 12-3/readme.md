@@ -27,7 +27,8 @@ WHERE LEFT(a.district,1)='K' AND RIGHT(a.district,1)='a' AND POSITION(' ' IN a.d
 и стоимость которых превышает 10.00.
 
 ```sql
-SELECT …
+SELECT * FROM payment p 
+WHERE amount >10 AND DATE(payment_date) BETWEEN '2005-06-15' AND '2005-06-18'
 ```
 
 ### Задание 3.
