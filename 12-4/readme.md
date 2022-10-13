@@ -19,24 +19,22 @@
 
 ```sql
 SELECT 
-	CONCAT_WS(' ', stf.last_name, stf.first_name) as manager,
-	cty.city,
-	COUNT(1) as customers_count
-	
+  CONCAT_WS(' ', stf.last_name, stf.first_name) as manager,
+  cty.city,
+  COUNT(1) as customers_count	
 FROM store str  
 JOIN customer cst ON str.store_id = cst.store_id
 JOIN address adr ON str.address_id = adr.address_id
 JOIN city cty ON cty.city_id = adr.address_id 
 JOIN staff stf ON str.manager_staff_id = stf.staff_id 
-WHERE 
-1
+WHERE 1
 GROUP BY str.store_id;
 
 -- проверочный запрос магазинов
 SELECT s.store_id , COUNT(1) as cst_count
 FROM store s, customer c 
 WHERE 
-	c.store_id = s.store_id 
+  c.store_id = s.store_id 
 GROUP BY s.store_id;
 ```
 
@@ -60,7 +58,7 @@ WHERE f.`length` > 115.272;
 SELECT COUNT(1) as long_film_count
 FROM film f 
 WHERE 
-	f.`length` > ( SELECT AVG(f0.`length`) FROM film f0 WHERE 1 );
+ f.`length` > ( SELECT AVG(f0.`length`) FROM film f0 WHERE 1 );
 ```
 
 ### Задание 3.
