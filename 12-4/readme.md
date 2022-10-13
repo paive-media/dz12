@@ -66,7 +66,12 @@ WHERE
 Получите информацию, за какой месяц была получена наибольшая сумма платежей и добавьте информацию по количеству аренд за этот месяц.
 
 ```sql
-SELECT 
+SELECT MONTH(p.payment_date) as most_value_month, SUM(amount) as month_summ, COUNT(1) as rental_count
+FROM payment p 
+WHERE 1
+GROUP BY most_value_month
+ORDER BY month_summ DESC
+LIMIT 1;
 ```
 
 ### Задание 4*.
@@ -76,6 +81,24 @@ SELECT
 
 ```sql
 SELECT 
+  vp.staff_id,
+  CONCAT_WS(' ', s.first_name, s.last_name) AS manager,
+  CASE 
+    WHEN vp.payment_count > 8000 THEN 'Yes'
+    ELSE 'No'
+  END AS bonus
+FROM 
+  staff s,
+  (
+    SELECT 
+      p.staff_id, 
+      COUNT(1) AS payment_count
+    FROM payment p 
+    WHERE 1
+    GROUP BY p.staff_id 
+  ) AS vp
+WHERE 
+  vp.staff_id = s.staff_id;
 ```
 
 ### Задание 5*.
@@ -83,5 +106,22 @@ SELECT
 Найдите фильмы, которые ни разу не брали в аренду.
 
 ```sql
-SELECT 
+-- медленный, но ВЕРНЫЙ запрос = 42 фильма
+SELECT f.*
+FROM film f
+WHERE 
+  f.film_id NOT IN (
+    SELECT DISTINCT i.film_id
+    FROM inventory i
+    LEFT JOIN rental r ON r.inventory_id = i.inventory_id
+  )
+
+
+-- ошибочный запрос = всегда возвращает только первый фильм
+SELECT f.*
+FROM film f, inventory i
+LEFT JOIN rental r ON r.inventory_id = i.inventory_id 
+WHERE 
+  r.rental_id IS NULL AND 
+  f.film_id = i.film_id 
 ```
