@@ -69,6 +69,9 @@ GROUP BY c.customer_id
 
 `Bitmap index, Reverse index, Partial index, Function based index, Spatial indexes (разные разбиения)`
 
-
+Источники: 
+[раз](https://habr.com/ru/post/102785/)
+[два](https://habr.com/ru/company/postgrespro/blog/326096/)
+[три](https://postgrespro.ru/docs/postgresql/9.6/indexes-types)
 
 
