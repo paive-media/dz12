@@ -67,10 +67,7 @@ GROUP BY c.customer_id
 
 Самостоятельно изучите, какие типы индексов используются в PostgreSQL. Перечислите те индексы, которые используются в PostgreSQL, а в MySQL нет.
 
-
-PgSQL:
-
-MySQL:
+`Bitmap index, Reverse index, Partial index, Function based index, Spatial indexes (разные разбиения)`
 
 
 
