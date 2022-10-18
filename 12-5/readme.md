@@ -50,15 +50,15 @@ CREATE INDEX payment_payment_date_IDX USING BTREE ON sakila.payment (payment_dat
 ALTER TABLE sakila.payment DROP INDEX payment_payment_date_IDX;
 
 -- итоговый запрос: выборка 391 строк = 10ms
-select 
-	concat(c.last_name, ' ', c.first_name) as fio, 
-	sum(p.amount) as amount
-from customer c
-join rental r ON r.customer_id = c.customer_id
-join payment p ON p.payment_date = r.rental_date
-join inventory i ON i.inventory_id = r.inventory_id
-where 
-	date(p.payment_date) = '2005-07-30'
+SELECT 
+  concat(c.last_name, ' ', c.first_name) AS fio, 
+  sum(p.amount) AS amount
+FROM customer AS c
+JOIN rental AS r ON r.customer_id = c.customer_id
+JOIN payment AS p ON p.payment_date = r.rental_date
+JOIN inventory AS i ON i.inventory_id = r.inventory_id
+WHERE 
+  date(p.payment_date) = '2005-07-30'
 GROUP BY c.customer_id
 
 ```
