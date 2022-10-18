@@ -51,14 +51,14 @@ ALTER TABLE sakila.payment DROP INDEX payment_payment_date_IDX;
 
 -- итоговый запрос: выборка 391 строк = 10ms
 SELECT 
-  concat(c.last_name, ' ', c.first_name) AS fio, 
-  sum(p.amount) AS amount
+  CONCAT(c.last_name, ' ', c.first_name) as fio,
+  SUM(p.amount) AS amount
 FROM customer AS c
 JOIN rental AS r ON r.customer_id = c.customer_id
 JOIN payment AS p ON p.payment_date = r.rental_date
 JOIN inventory AS i ON i.inventory_id = r.inventory_id
 WHERE 
-  date(p.payment_date) = '2005-07-30'
+  DATE(p.payment_date) = '2005-07-30'
 GROUP BY c.customer_id
 
 ```
