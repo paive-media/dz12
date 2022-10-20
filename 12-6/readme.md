@@ -69,6 +69,12 @@ mysql> START SLAVE;
 mysql> SHOW SLAVE STATUS\G
 ```
 
+Скрины: 
+
+![task2 screen1](https://github.com/paive-media/dz12/blob/main/12-6/dz12-6_screen1.png "Master")
+![task2 screen2-1](https://github.com/paive-media/dz12/blob/main/12-6/dz12-6_screen2-1.png "Slave 1")
+![task2 screen2-2](https://github.com/paive-media/dz12/blob/main/12-6/dz12-6_screen2-2.png "Slave 2")
+
 ---
 
 ### Задание 3*. 
