@@ -81,4 +81,42 @@ mysql> SHOW SLAVE STATUS\G
 
 Выполните конфигурацию Master-Master репликации. Произведите проверку.
 
-*Приложите скриншоты конфигурации, выполнения работы (состояния и режимы работы серверов).*
+Команды:
+```sh
+
+
+#-- @Master2  deb02
+mysql -uroot -p
+
+mysql> CREATE USER 'repl_user2'@'%' IDENTIFIED WITH mysql_native_password BY 'passW02rd*';
+mysql> GRANT REPLICATION SLAVE ON *.* TO 'repl_user2'@'%';
+mysql> FLUSH PRIVILEGES;
+mysql> SHOW MASTER STATUS;
+
+
+nano /etc/mysql/mysql.conf.d/mysqld.cnf
+
+#-- Slave2 add
+relay-log = /var/lib/mysql/mysql-relay-bin
+relay-log-index = /var/lib/mysql/mysql-relay-bin.index
+read_only = 1
+#-- 
+
+systemctl restart mysql
+
+
+#-- @Slave2  deb01
+mysql -uroot -p
+
+mysql> CHANGE MASTER TO MASTER_HOST='10.244.0.11', MASTER_USER='repl_user2', MASTER_PASSWORD='passW02rd*', MASTER_LOG_FILE='mybin.000003', MASTER_LOG_POS=1034;
+
+mysql> START SLAVE;
+mysql> SHOW SLAVE STATUS\G
+
+```
+
+Скрины:
+
+![task3 screen3](https://github.com/paive-media/dz12/blob/main/12-6/dz12-6_screen3.png "Master2")
+![task3 screen4-1](https://github.com/paive-media/dz12/blob/main/12-6/dz12-6_screen4-1.png "Slave2 1")
+![task3 screen4-2](https://github.com/paive-media/dz12/blob/main/12-6/dz12-6_screen4-2.png "Slave2 2")
