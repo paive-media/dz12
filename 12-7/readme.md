@@ -33,7 +33,7 @@
 Опишите принципы построения системы и их разграничение или (и) разбивку между базами данных.
 
 **Горизонтальный шаринг**
-
+![task2 screen1](https://github.com/paive-media/dz12/blob/main/12-7/shema_horiz.png "Схема горизонтальная")
 
 **Вертикальный шаринг**
-
+![task2 screen2](https://github.com/paive-media/dz12/blob/main/12-7/shema_vertik.png "Схема вертикальная")
