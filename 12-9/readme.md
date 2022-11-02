@@ -75,12 +75,21 @@ select * from test_table;
 ![task1 screen3](https://github.com/paive-media/dz12/blob/main/12-9/dz12-9_screen3.png "ya.cl db")
 
 ```sql
+-- на MASTER-е
 CREATE TABLE test_table( id int NOT NULL, fld varchar) ;
 
 ALTER TABLE test_table ADD PRIMARY KEY (id);
 
 INSERT INTO test_table (id, fld) 
 VALUES (1,'Строка 1'), (2,'Строка 2'), (3,'Строка 3');
+
+
+-- test query @ MASTER 
+SELECT * FROM test_table;
+
+-- test query @ REPLICA
+SELECT * FROM test_table;
+
 ```
 
 ### Задание 2*
