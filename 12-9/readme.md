@@ -68,12 +68,21 @@ select * from test_table;
 1) Созданной базы данных;
 2) Результата вывода команды на реплике ```select * from test_table;```.
 
+![task1 screen1](https://github.com/paive-media/dz12/blob/main/12-9/dz12-9_screen1.png "master")
+
+![task1 screen2](https://github.com/paive-media/dz12/blob/main/12-9/dz12-9_screen2.png "replica")
+
+![task1 screen3](https://github.com/paive-media/dz12/blob/main/12-9/dz12-9_screen3.png "ya.cl db")
 
 
 ### Задание 2*
 
 Создайте кластер, как в задании 1 с помощью terraform.
 
+[main.tf](https://github.com/paive-media/dz12/blob/main/12-9/main.tf)
+
+Разбираюсь с ошибкой доступа при создании: ожидаю комментария от Поддержки Я.Облака…
+![task2 screen1](https://github.com/paive-media/dz12/blob/main/12-9/dz12-9_screen4.png "ya.cl tf err")
 
 По итогу пришлите скришоты:
 
