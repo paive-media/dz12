@@ -96,16 +96,22 @@ SELECT * FROM test_table;
 
 Создайте кластер, как в задании 1 с помощью terraform.
 
-[main.tf](https://github.com/paive-media/dz12/blob/main/12-9/main.tf)
+[main_err.tf](https://github.com/paive-media/dz12/blob/main/12-9/main_err.tf)
 
 Разбираюсь с ошибкой доступа при создании: ожидаю комментария от Поддержки Я.Облака…
 ![task2 screen1](https://github.com/paive-media/dz12/blob/main/12-9/dz12-9_screen4.png "ya.cl tf err")
+
+`UPDATED` Разобрался &mdash; была ошибка в указании ID сетей.
 
 По итогу пришлите скришоты:
 
 1) Скриншот созданной базы данных;
 2) Код terraform, создающий базу данных.
 
----
 
-Задания, помеченные звездочкой * - дополнительные (не обязательные к выполнению) и никак не повлияют на получение вами зачета по этому домашнему заданию. Вы можете их выполнить, если хотите глубже и/или шире разобраться в материале.
+
+Кластер, созданного с помощью Terraform:
+[main.tf правильный](https://github.com/paive-media/dz12/blob/main/12-9/main.tf)
+
+![task2 screen2](https://github.com/paive-media/dz12/blob/main/12-9/dz12-9_screen5.png "ya.cl tf-cluster")
+![task2 screen3](https://github.com/paive-media/dz12/blob/main/12-9/dz12-9_screen6.png "ya.cl tf-cluster db")
