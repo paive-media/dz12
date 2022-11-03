@@ -115,3 +115,4 @@ SELECT * FROM test_table;
 
 ![task2 screen2](https://github.com/paive-media/dz12/blob/main/12-9/dz12-9_screen5.png "ya.cl tf-cluster")
 ![task2 screen3](https://github.com/paive-media/dz12/blob/main/12-9/dz12-9_screen6.png "ya.cl tf-cluster db")
+![task2 screen4](https://github.com/paive-media/dz12/blob/main/12-9/dz12-9_screen7.png "ya.cl tf-cluster operations")
